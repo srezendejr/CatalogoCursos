@@ -1,0 +1,121 @@
+@model CourseCatalogViewModel
+@{
+    ViewData["Title"] = "Catálogo";
+    var totalCourses = Model.Courses.Count;
+}
+
+<section class="catalog-page">
+    <div class="container">
+        <div class="catalog-page__heading">
+            <h1>Catálogo de cursos</h1>
+            <p>Filtre por área, modalidade e status para encontrar a formação ideal.</p>
+        </div>
+
+        <form method="get" class="catalog-filter">
+            <div class="catalog-filter__field catalog-filter__field--search">
+                <label for="term">Pesquisar</label>
+                <input id="term" name="Term" value="@Model.Filter.Term" placeholder="Título, descrição ou instrutor" />
+            </div>
+            <div class="catalog-filter__field">
+                <label for="category">Categoria</label>
+                <select id="category" name="Category">
+                    <option value="">Todas</option>
+                    @foreach (var category in Model.Categories)
+                    {
+                        if (string.Equals(Model.Filter.Category, category, StringComparison.OrdinalIgnoreCase))
+                        {
+                            <option value="@category" selected>@category</option>
+                        }
+                        else
+                        {
+                            <option value="@category">@category</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="catalog-filter__field">
+                <label for="modality">Modalidade</label>
+                <select id="modality" name="Modality">
+                    <option value="">Todas</option>
+                    @foreach (var modality in Model.Modalities)
+                    {
+                        if (string.Equals(Model.Filter.Modality, modality, StringComparison.OrdinalIgnoreCase))
+                        {
+                            <option value="@modality" selected>@modality</option>
+                        }
+                        else
+                        {
+                            <option value="@modality">@modality</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="catalog-filter__field">
+                <label for="status">Status</label>
+                <select id="status" name="Status">
+                    <option value="">Todos</option>
+                    @foreach (var status in Model.Statuses)
+                    {
+                        if (string.Equals(Model.Filter.Status, status, StringComparison.OrdinalIgnoreCase))
+                        {
+                            <option value="@status" selected>@status</option>
+                        }
+                        else
+                        {
+                            <option value="@status">@status</option>
+                        }
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-brand">Filtrar</button>
+            <a class="btn btn-outline-secondary" asp-controller="Courses" asp-action="Index">Limpar filtros</a>
+        </form>
+
+        <p class="catalog-page__result">
+            @totalCourses curso@(totalCourses == 1 ? string.Empty : "s") encontrado@(totalCourses == 1 ? string.Empty : "s")
+        </p>
+
+        @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.ErrorMessage
+            </div>
+        }
+
+        @if (!Model.Courses.Any())
+        {
+            <div class="catalog-empty">
+                Nenhum curso encontrado para os filtros informados.
+            </div>
+        }
+        else
+        {
+            <div class="catalog-grid">
+                @foreach (var course in Model.Courses)
+                {
+                    <article class="course-card">
+                        <div class="course-card__image">
+                            <img src="~/Recursos/Imagens/Cursos/curso-@(course.IdCurso).png"
+                                 alt="Imagem de apresentação do curso @course.NomeBreve"
+                                 onerror="this.onerror=null;this.src='/Recursos/Imagens/video-thumb.png';" />
+                        </div>
+                        <div class="course-card__top">
+                            <span class="course-card__modality">@course.Modalidade</span>
+                            <img src="~/Recursos/Imagens/star.svg" alt="" />
+                        </div>
+                        <h2>@course.NomeCompleto</h2>
+                        <p>@course.NomeBreve</p>
+                        <ul>
+                            <li><strong>Categoria:</strong> @course.Categoria</li>
+                            <li><strong>Nível:</strong> @course.Status</li>
+                            <li><strong>Público alvo:</strong> @course.PublicoAlvo</li>
+                            <li><strong>Carga horária:</strong> @course.CargaHoraria h</li>
+                            <li><strong>Início:</strong> @course.DataDisponibilizacao.ToString("dd/MM/yyyy")</li>
+                        </ul>
+                        <a class="btn btn-outline-dark" asp-controller="Courses" asp-action="Details" asp-route-id="@course.IdCurso">Ver detalhes</a>
+                    </article>
+                }
+            </div>
+        }
+    </div>
+</section>

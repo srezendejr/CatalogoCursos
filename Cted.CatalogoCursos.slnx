@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos.API/Cted.CatalogoCursos.API.csproj" Id="d9dbdb5e-f81d-43cd-9695-b2e8b6093981" />
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos.Database/Cted.CatalogoCursos.Database.csproj" />
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos.Models/Cted.CatalogoCursos.Models.csproj" />
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos.Repository/Cted.CatalogoCursos.Repository.csproj" />
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos.Service/Cted.CatalogoCursos.Service.csproj" />
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos.ViewModel/Cted.CatalogoCursos.ViewModel.csproj" Id="c775701a-c686-4dea-bf87-08093385abcd" />
+  <Project Path="../../../../../../../../Projetos/CatalogoCursos/Cted.CatalogoCursos/Cted.CatalogoCursos.csproj" />
+</Solution>

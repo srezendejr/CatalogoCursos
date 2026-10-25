@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cted.CatalogoCursos.Database\Cted.CatalogoCursos.Database.csproj" />
+    <ProjectReference Include="..\Cted.CatalogoCursos.Repository\Cted.CatalogoCursos.Repository.csproj" />
+    <ProjectReference Include="..\Cted.CatalogoCursos.Service\Cted.CatalogoCursos.Service.csproj" />
+  </ItemGroup>
+
+</Project>

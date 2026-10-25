@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "AVA";
+}
+
+<section class="ava-hero">
+    <div class="container">
+        <div class="ava-hero__content">
+            <span class="hero__chip">Ambiente Virtual de Aprendizagem</span>
+            <h1>Aprenda com autonomia, acompanhamento e foco em resultado</h1>
+            <p>
+                O AVA SESI Indústria reúne conteúdos, trilhas, atividades e feedback em um único ambiente,
+                com experiência adaptada para desktop e mobile.
+            </p>
+            <div class="ava-hero__actions">
+                <a class="btn btn-brand btn-lg" asp-controller="Courses" asp-action="Index">Explorar cursos</a>
+                <a class="btn btn-outline-dark btn-lg" asp-controller="Home" asp-action="Index">Voltar ao início</a>
+            </div>
+        </div>
+        <div class="ava-hero__thumb">
+            <img src="~/Recursos/Imagens/video-thumb.png" alt="Demonstração do ambiente virtual de aprendizagem" />
+        </div>
+    </div>
+</section>
+
+<section class="ava-benefits">
+    <div class="container">
+        <div class="section-heading">
+            <h2>O que você encontra no AVA</h2>
+            <p>Recursos pensados para aprendizado contínuo e aplicação prática.</p>
+        </div>
+        <div class="ava-benefits__grid">
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/01-certificacao-bege.svg" alt="" />
+                <h3>Trilhas certificáveis</h3>
+                <p>Progresso por módulos com emissão de certificado ao concluir etapas.</p>
+            </article>
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/02-professores-bege.svg" alt="" />
+                <h3>Mentoria de especialistas</h3>
+                <p>Interação com docentes e orientação para dúvidas técnicas.</p>
+            </article>
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/03-suporte-bege.svg" alt="" />
+                <h3>Suporte acadêmico</h3>
+                <p>Atendimento para questões de acesso, atividades e acompanhamento.</p>
+            </article>
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/04-flexibilidade-bege.svg" alt="" />
+                <h3>Rotina flexível</h3>
+                <p>Conteúdo disponível para estudo em horários compatíveis com sua agenda.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="ava-banner">
+    <div class="container">
+        <div class="ava-banner__card">
+            <img src="~/Recursos/Imagens/banner-ava.png" alt="Banner do ambiente virtual de aprendizagem" />
+            <div class="ava-banner__overlay">
+                <h2>Experiência digital completa</h2>
+                <p>Aulas, materiais, avaliações e acompanhamento centralizados.</p>
+                <a class="btn btn-light" asp-controller="Courses" asp-action="Index">Ir para o catálogo</a>
+            </div>
+        </div>
+    </div>
+</section>

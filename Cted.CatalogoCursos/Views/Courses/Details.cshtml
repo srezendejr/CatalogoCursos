@@ -1,0 +1,51 @@
+@model CourseOffer
+@{
+    ViewData["Title"] = "Detalhes do curso";
+}
+
+<section class="course-detail">
+    <div class="container">
+        <a class="course-detail__back" asp-controller="Courses" asp-action="Index">&larr; Voltar ao catálogo</a>
+
+        <article class="course-detail__card">
+            <div class="course-detail__cover">
+                <img src="~/Recursos/Imagens/Cursos/curso-@(Model.Id).png"
+                     alt="Imagem de apresentação do curso @Model.Title"
+                     onerror="this.onerror=null;this.src='/Recursos/Imagens/video-thumb.png';" />
+            </div>
+
+            <header class="course-detail__header">
+                <h1>@Model.Title</h1>
+                <div class="course-detail__badges">
+                    <span>@Model.Category</span>
+                    <span>@Model.Modality</span>
+                    <span>@Model.Level</span>
+                </div>
+            </header>
+
+            <p class="course-detail__lead">@Model.ShortDescription</p>
+            <p class="course-detail__text">@Model.FullDescription</p>
+
+            <dl class="course-detail__meta">
+                <div>
+                    <dt>Instrutor</dt>
+                    <dd>@Model.Instructor</dd>
+                </div>
+                <div>
+                    <dt>Carga horária</dt>
+                    <dd>@Model.WorkloadHours horas</dd>
+                </div>
+                <div>
+                    <dt>Público alvo</dt>
+                    <dd>@Model.TargetAudience</dd>
+                </div>
+                <div>
+                    <dt>Data de início</dt>
+                    <dd>@Model.StartDate.ToString("dd/MM/yyyy")</dd>
+                </div>
+            </dl>
+
+            <a class="btn btn-brand" asp-controller="Courses" asp-action="Index">Explorar outros cursos</a>
+        </article>
+    </div>
+</section>

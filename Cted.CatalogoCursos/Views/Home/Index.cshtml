@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+
+<section class="hero">
+    <div class="container">
+        <div class="hero__content">
+            <span class="hero__chip">SESI Indústria</span>
+            <h1>Qualificação profissional para acelerar sua carreira na indústria</h1>
+            <p>
+                Explore trilhas em tecnologia, dados, educação digital e design com aulas práticas e acompanhamento de especialistas.
+            </p>
+            <div class="hero__actions">
+                <a class="btn btn-brand btn-lg" asp-controller="Courses" asp-action="Index">Acessar catálogo</a>
+                <a class="btn btn-outline-dark btn-lg" href="#diferenciais">Nossos diferenciais</a>
+            </div>
+        </div>
+        <div class="hero__image-wrap">
+            <img src="~/Recursos/Imagens/hero-image.png" alt="Profissional estudando em ambiente industrial" class="hero__image" />
+        </div>
+    </div>
+</section>
+
+<section class="features" id="diferenciais">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Diferenciais do programa</h2>
+            <p>Conteúdo atualizado para demandas reais da indústria.</p>
+        </div>
+        <div class="features__grid">
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/01-certificacao-red.svg" alt="" />
+                <h3>Certificação reconhecida</h3>
+                <p>Comprove competências valorizadas no mercado.</p>
+            </article>
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/02-professores-red.svg" alt="" />
+                <h3>Professores especialistas</h3>
+                <p>Aprendizado guiado por profissionais com experiência prática.</p>
+            </article>
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/03-suporte-red.svg" alt="" />
+                <h3>Suporte de aprendizagem</h3>
+                <p>Acompanhamento para manter ritmo e evolução contínua.</p>
+            </article>
+            <article class="feature-card">
+                <img src="~/Recursos/Imagens/04-flexibilidade-bege.svg" alt="" />
+                <h3>Flexibilidade de estudo</h3>
+                <p>Formatos presenciais, híbridos e online para sua rotina.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="platform">
+    <div class="container">
+        <div class="platform__banner">
+            <img src="~/Recursos/Imagens/banner-ava.png" alt="Ambiente virtual de aprendizagem" />
+            <div class="platform__content">
+                <h2>Ambiente Virtual de Aprendizagem</h2>
+                <p>Materiais, atividades e acompanhamento em uma plataforma única.</p>
+                <div class="platform__actions">
+                    <a class="btn btn-brand" asp-controller="Ava" asp-action="Index">Conhecer AVA</a>
+                    <a class="btn btn-light" asp-controller="Courses" asp-action="Index">Ver cursos</a>
+                </div>
+            </div>
+        </div>
+        <div class="platform__video">
+            <img src="~/Recursos/Imagens/video-thumb.png" alt="Vídeo de apresentação do programa" />
+            <div class="platform__video-badge">Apresentação do programa</div>
+        </div>
+    </div>
+</section>
+
+<section class="categories">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Áreas em destaque</h2>
+            <p>Escolha a trilha que melhor combina com seus objetivos.</p>
+        </div>
+        <div class="categories__grid">
+            <article class="category-chip"><img src="~/Recursos/Imagens/icon-linguagens-20px.svg" alt="" /><span>Linguagens e comunicação</span></article>
+            <article class="category-chip"><img src="~/Recursos/Imagens/icon-matematica-20px.svg" alt="" /><span>Matemática aplicada</span></article>
+            <article class="category-chip"><img src="~/Recursos/Imagens/icon-ciencias-natureza-20px.svg" alt="" /><span>Ciências e tecnologia</span></article>
+            <article class="category-chip"><img src="~/Recursos/Imagens/icon-sustentabilidade-20px.svg" alt="" /><span>Sustentabilidade industrial</span></article>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <div class="cta__box">
+            <h2>Pronto para evoluir sua carreira?</h2>
+            <p>Veja as próximas turmas e encontre o curso ideal para seu momento.</p>
+            <a class="btn btn-light btn-lg" asp-controller="Courses" asp-action="Index">Ver catálogo completo</a>
+        </div>
+    </div>
+</section>
