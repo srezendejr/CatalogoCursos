@@ -1,4 +1,4 @@
-# Catálogo de Cursos (SESI)
+# Catálogo de Cursos
 
 ## Objetivo da aplicação
 Aplicação web para **consulta de cursos** com catálogo, filtros e página de detalhes, consumindo uma API interna em arquitetura por camadas.
